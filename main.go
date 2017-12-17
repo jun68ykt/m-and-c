@@ -15,8 +15,9 @@ import (
 )
 
 // definition of structure for the river sides
-// containing variable 'm' is the number of
-// missionaries and 'n' is the number of cannibals
+// containing variable 'm' and 'c'.
+// The former is the number of missionaries and
+// the latter is the number of cannibals.
 type RiverSide struct {
 	m, c int
 }
@@ -24,7 +25,7 @@ type RiverSide struct {
 // definition of the state
 // which contains 2 river sides, left and right,
 // and string variable 'boat' that describes
-// which river side the boat
+// which river side the boat is berthed
 type State struct {
 	left, right RiverSide
 	boat        string // "left" or "right"
@@ -55,8 +56,8 @@ var goalState State = State{
 // The struct 'Operator' describes the persons
 // boarding the boat.
 // It contains two int variables, 'm' and 'c'.
-// For example Operator {1, 1} is meaning that
-// One missionary and one cannibals board the
+// For example, Operator {1, 1} is meaning that
+// 1 missionary and 1 cannibal board the
 // boat shipping to opposite shore of the river.
 type Operator struct {
 	m, c int
